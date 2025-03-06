@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <p id="currentTime"></p>
+      <script src="script.js"></script>
+  </body>
+</html><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Ngọc Trí</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        /* Nền đen */
+        body {
+            background: url('https://cellphones.com.vn/sforum/wp-content/uploads/2022/09/21-4.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+        }
+
+        /* Tiêu đề hiệu ứng nhấp nháy */
+        h1 {
+            font-size: 2em;
+            font-family: 'Press Start 2P', cursive;
+            font-weight: 700;
+            color: #39FF14;
+            text-shadow: 0 0 10px #39FF14, 0 0 20px #006400;
+            animation: flicker 1s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; text-shadow: 0 0 10px #39FF14, 0 0 20px #006400; }
+            100% { opacity: 0.6; text-shadow: 0 0 5px #39FF14, 0 0 10px #006400; }
+        }
+
+        .header-notice {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Container chứa switch */
+        .switch-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Thiết kế switch */
+        .switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #222;
+            border: 3px solid;
+            padding: 10px 20px;
+            width: 250px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 0 0 5px red;
+            animation: neonBorder 2s infinite linear;
+        }
+
+        /* Hiệu ứng viền neon */
+        @keyframes neonBorder {
+    0% { border-color: cyan; box-shadow: 0 0 15px cyan; }
+    20% { border-color: blue; box-shadow: 0 0 15px blue; }
+    40% { border-color: purple; box-shadow: 0 0 15px purple; }
+    60% { border-color: lime; box-shadow: 0 0 15px lime; }
+    80% { border-color: white; box-shadow: 0 0 15px white; }
+    100% { border-color: cyan; box-shadow: 0 0 15px cyan; }
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        /* Nút bật tắt */
+        .slider {
+            width: 50px;
+            height: 24px;
+            background: #000;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+            transition: 0.3s;
+        }
+
+        input:checked + .slider {
+            background: #E60026;
+        }
+
+        input:checked + .slider::before {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body>
+
+    <marquee width="70%" behavior="scroll">
+        <font color="white" style="text-shadow: 0 0 0.2em green;">
+            <b>Menu Được Tạo Bởi Ngọc Trí</b>
+        </font>
+    </marquee>
+
+    <h1>Bé Trí Dz</h1>
+
+    <div class="header-notice">
+        <p><strong style="color: #FF4500; text-shadow: 0 0 5px #FF4500, 0 0 10px #FF6347;">Make menu liên hệ: </strong><a href="https://zalo.me/0345671392" style="color: #00FFFF; text-shadow: 0 0 5px #00F, 0 0 10px #0000FF;">@nguyenngoctrivip</a></p>
+    </div>
+
+
+
+    <div class="switch-container">
+        <label class="switch">
+           Atiband Shadowrocket
+            <input type="checkbox" id="timspeedToggle" onchange="toggleFeature('Speed')">
+            <span class="slider"></span>
+        </label>
+
+        <label class="switch">
+            AimBot
+            <input type="checkbox" id="batspeedToggle" onchange="toggleFeature('Nhạy Game')">
+            <span class="slider"></span>
+        </label>
+
+        <label class="switch">
+            Aim Fox
+            <input type="checkbox" id="tatspeedToggle" onchange="toggleFeature('Tìm Địch')">
+            <span class="slider"></span>
+        </label>
+
+        <label class="switch">
+            Đạn Thẳng
+            <input type="checkbox" id="noLagToggle" onchange="toggleFeature('No Lag')">
+            <span class="slider"></span>
+    </div>
+
+    <script>
+        function toggleFeature(feature) {
+            const isChecked = event.target.checked;
+            console.log(`Bé Trí Hắc - :  "OFF"`);
+        }
+
+        function disableAll() {
+            document.querySelectorAll('.switch input').forEach(el => el.checked = false);
+            console.log("Bé Trí Hắc - Tất cả đã tắt");
+        }
+    </script>
+
+</body>
+</html>
